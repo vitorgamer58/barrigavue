@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = 'http://barrigarest.notasdovitor.top:3000'
+const BASE_URL = 'http://barrigarest.notasdovitor.top:3001'
 
 export default {
     login (payload) {
