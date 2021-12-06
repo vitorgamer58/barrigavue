@@ -20,24 +20,28 @@
 </template>
 
 <script>
-import http from '../http'
+import http from "../http";
 export default {
   data: function () {
     return {
       usuario: {
-        name: '',
-        passwd: '',
-        email: ''
-      }
-    }
+        name: "",
+        passwd: "",
+        email: "",
+      },
+    };
   },
   methods: {
-    cadastrarUsuario () {
-      http.cadastro(this.usuario)
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err))
-    }
-  }
+    cadastrarUsuario() {
+      http
+        .cadastro(this.usuario)
+        .then((res) => {
+          console.log(res);
+          this.$router.push({ name: "login" });
+        })
+        .catch((err) => console.log(err));
+    },
+  },
 };
 </script>
 
