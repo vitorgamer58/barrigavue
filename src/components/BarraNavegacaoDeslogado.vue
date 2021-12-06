@@ -1,13 +1,21 @@
 <template>
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item">
-      Teste
-    </li>
-  </ul>
+  <div class="" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li v-for="route in rotas" v-bind:key="route.titulo">
+        <router-link :to="route.path">{{ route.titulo }}</router-link>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    rotas: {
+      type: Array
+    }
+  }
+};
 </script>
 
 <style>

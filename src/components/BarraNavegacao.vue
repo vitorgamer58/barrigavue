@@ -1,17 +1,29 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-barriga">
-    <a href="/">BarrigaVue</a>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <barra-navegacao-deslogado />
-    </div>
+    <barra-navegacao-logado :rotas="rotas" v-if="usuarioEstaLogado" />
+    <barra-navegacao-deslogado :rotas="rotas" v-else />
   </nav>
 </template>
 
 <script>
-import BarraNavegacaoDeslogado from './BarraNavegacaoDeslogado.vue';
+import BarraNavegacaoDeslogado from "./BarraNavegacaoDeslogado.vue";
+import { routes } from "@/router";
+import BarraNavegacaoLogado from "./BarraNavegacaoLogado.vue";
 export default {
-  components: { BarraNavegacaoDeslogado },
-
+  components: {
+    BarraNavegacaoDeslogado,
+    BarraNavegacaoLogado,
+  },
+  data() {
+    return {
+      rotas: routes,
+    };
+  },
+  computed: {
+    usuarioEstaLogado () {
+      return Boolean(localStorage.getItem('token'))
+    }
+  }
 };
 </script>
 
