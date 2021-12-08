@@ -25,6 +25,20 @@ const routes = [
     titulo: 'Login',
     logado: false,
     component: () => import('../views/Login.vue')
+  },
+  {
+    path: '/contas',
+    name: 'contas',
+    titulo: 'Contas',
+    logado: true,
+    component: () => import('../views/Accounts.vue')
+  },
+  {
+    path: '/extrato',
+    name: 'extrato',
+    titulo: 'Extrato',
+    logado: true,
+    component: () => import('../views/History.vue')
   }
 ]
 /* TODO: Se o usuário estiver logado:

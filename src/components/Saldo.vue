@@ -1,14 +1,20 @@
 <template>
   <div>
-    <ul>
-      <li v-for="conta in contas" v-bind:key="conta.id">
-        Conta {{ conta.id }} possui {{ conta.sum }}
-      </li>
-    </ul>
+    <table>
+      <tr>
+        <th>Conta</th>
+        <th>Saldo</th>
+      </tr>
+      <tr v-for="conta in contas" v-bind:key="conta.id">
+        <th>{{ conta.name }}</th>
+        <th>{{ conta.sum }}</th>
+      </tr>
+    </table>
   </div>
 </template>
 
 <script>
+/* eslint-disable no-unused-vars */
 import http from "../http";
 export default {
   name: "Saldo",
@@ -20,9 +26,15 @@ export default {
   mounted() {
     http
       .getSaldo()
-      .then(({ data }) => {
-        this.contas = data;
-        console.log(data);
+      .then((saldo) => {
+        http.getContas().then((getcontas) => {
+          getcontas.data.forEach((e) => {
+            const acc = { ...e };
+            const getsaldo = saldo.data.filter((s) => s.id == acc.id);
+            acc.sum = getsaldo[0].sum;
+            this.contas.push(acc);
+          });
+        });
       })
       .catch((err) => console.log(err));
   },
@@ -30,4 +42,8 @@ export default {
 </script>
 
 <style>
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
 </style>
