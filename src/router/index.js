@@ -34,6 +34,13 @@ const routes = [
     component: () => import('../views/Accounts.vue')
   },
   {
+    path: '/transacao',
+    name: 'transação',
+    titulo: 'Transação',
+    logado: true,
+    component: () => import('../views/Transaction.vue')
+  },
+  {
     path: '/extrato',
     name: 'extrato',
     titulo: 'Extrato',

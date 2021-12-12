@@ -4,7 +4,7 @@ const BASE_URL = 'http://barrigarest.notasdovitor.top:3001'
 
 axios.interceptors.request.use(function (config) {
     const token = localStorage.getItem('token')
-    if(token) {
+    if (token) {
         config.headers.Authorization = `Bearer ${token}`
     }
     return config
@@ -13,12 +13,12 @@ axios.interceptors.request.use(function (config) {
 })
 
 export default {
-    login (payload) {
+    login(payload) {
         const endpoint = `${BASE_URL}/auth/signin`
 
         return axios.post(endpoint, payload)
     },
-    cadastro (payload) {
+    cadastro(payload) {
         const endpoint = `${BASE_URL}/auth/signup`
 
         return axios.post(endpoint, payload)
@@ -52,5 +52,10 @@ export default {
         const endpoint = `${BASE_URL}/v1/transactions/${id}`
 
         return axios.delete(endpoint)
+    },
+    criarTransacao(payload) {
+        const endpoint = `${BASE_URL}/v1/transactions`
+
+        return axios.post(endpoint, payload)
     }
 }

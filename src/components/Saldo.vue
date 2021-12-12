@@ -31,7 +31,8 @@ export default {
           getcontas.data.forEach((e) => {
             const acc = { ...e };
             const getsaldo = saldo.data.filter((s) => s.id == acc.id);
-            acc.sum = getsaldo[0].sum;
+            if (getsaldo[0]) acc.sum = getsaldo[0].sum;
+            else acc.sum = 0
             this.contas.push(acc);
           });
         });

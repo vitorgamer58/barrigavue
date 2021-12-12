@@ -42,7 +42,13 @@ export default {
       http
         .deletarTransacao(transacao.id)
         .then(() => {
-          console.log('Deletado')
+          for (let index = 0; index < this.transacoes.length; index++) {
+            // Laço for percorre o array para remover a transacao que foi excluída
+            if (this.transacoes[index].id === transacao.id) {
+              this.transacoes.splice(index, 1);
+            }
+          }
+          alert("Deletado com sucesso");
         })
         .catch((err) => console.log(err));
     },
