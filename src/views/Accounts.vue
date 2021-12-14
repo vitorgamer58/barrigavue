@@ -50,7 +50,7 @@ export default {
         .then(({ data }) => {
           this.contas = data;
         })
-        .catch((err) => console.log(err));
+        .catch((err) => alert(err.response.data.error));
     },
     deletarConta(conta) {
       http
@@ -63,7 +63,7 @@ export default {
             }
           }
         })
-        .catch((err) => console.log(err));
+        .catch((err) => alert(err.response.data.error));
     },
   },
 };

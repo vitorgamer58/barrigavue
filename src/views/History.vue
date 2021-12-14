@@ -16,6 +16,12 @@
             Apagar
           </button>
         </div>
+        <div class="col col-md-1">
+          <router-link
+            :to="{ name: 'editar-transacao', params: { id: transacao.id } }"
+            ><button>Modificar</button></router-link
+          >
+        </div>
       </div>
     </li>
   </div>
@@ -35,7 +41,7 @@ export default {
       .then(({ data }) => {
         this.transacoes = data;
       })
-      .catch((err) => console.log(err));
+      .catch((err) => alert(err.response.data.error));
   },
   methods: {
     deletarTransacao(transacao) {

@@ -6,14 +6,18 @@
       <router-link to="/about">About</router-link> -->
     </div>
     <router-view />
+    <rodape />
   </div>
 </template>
 <script>
-import BarraNavegacao from '@/components/BarraNavegacao.vue'
+import BarraNavegacao from './components/BarraNavegacao.vue'
+import Rodape from './components/Rodape.vue';
 import {routes} from './router/index';
+
 export default {
   components: {
-    BarraNavegacao
+    BarraNavegacao,
+    Rodape
   },
   data() {
     return {

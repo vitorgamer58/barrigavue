@@ -11,8 +11,8 @@
         <input type="text" class="form-control" v-model="usuario.email" />
       </div>
       <div class="form-group">
-        <label for="email">Senha</label>
-        <input type="text" class="form-control" v-model="usuario.passwd" />
+        <label for="password">Senha</label>
+        <input type="password" class="form-control" v-model="usuario.passwd" />
       </div>
       <button class="btn btn-primary" type="submit">Cadastrar</button>
     </form>
@@ -39,7 +39,7 @@ export default {
           console.log(res);
           this.$router.push({ name: "login" });
         })
-        .catch((err) => console.log(err));
+        .catch((err) => alert(err.response.data.error));
     },
   },
 };

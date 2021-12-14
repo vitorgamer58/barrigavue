@@ -32,12 +32,14 @@ export default {
             const acc = { ...e };
             const getsaldo = saldo.data.filter((s) => s.id == acc.id);
             if (getsaldo[0]) acc.sum = getsaldo[0].sum;
-            else acc.sum = 0
+            else acc.sum = 0;
             this.contas.push(acc);
           });
         });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        alert(err.response.data.error);
+      });
   },
 };
 </script>

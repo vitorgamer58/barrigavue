@@ -7,10 +7,16 @@
         <input type="email" class="form-control" v-model="usuario.email" />
       </div>
       <div class="form-group">
-        <label for="senha">Senha</label>
-        <input type="senha" class="form-control" v-model="usuario.passwd" />
+        <label for="password">Senha</label>
+        <input type="password" class="form-control" v-model="usuario.passwd" />
       </div>
-      <button type="submit" class="btn btn-primary btn-block">Logar</button>
+      <button
+        type="submit"
+        class="btn btn-primary btn-block"
+        :disabled="!isDisabled()"
+      >
+        Logar
+      </button>
       <router-link :to="{ name: 'novo.usuario' }">
         Não possui cadastro? Cadastre-se aqui!
       </router-link>
@@ -23,7 +29,10 @@ import http from "../http";
 export default {
   data() {
     return {
-      usuario: {},
+      usuario: {
+        email: '',
+        passwd: ''
+      },
     };
   },
   methods: {
@@ -35,7 +44,10 @@ export default {
           localStorage.setItem("token", res.data.token);
           this.$router.push({ name: "Home" });
         })
-        .catch((err) => console.log(err));
+        .catch((err) => alert(err.response.data.error));
+    },
+    isDisabled() {
+      return Boolean(this.usuario.email.length > 2 && this.usuario.passwd.length > 1);
     },
   },
 };

@@ -48,6 +48,16 @@ export default {
 
         return axios.get(endpoint)
     },
+    obterTransacao(id) {
+        const endpoint = `${BASE_URL}/v1/transactions/${id}`
+
+        return axios.get(endpoint)
+    },
+    editarTransacao(id, payload) {
+        const endpoint = `${BASE_URL}/v1/transactions/${id}`
+
+        return axios.put(endpoint, payload)
+    },
     deletarTransacao(id) {
         const endpoint = `${BASE_URL}/v1/transactions/${id}`
 

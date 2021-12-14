@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    <Saldo />
+    <Saldo v-if="usuarioEstaLogado" />
+    <div v-else>
+      <p>Faça Login</p>
+    </div>
   </div>
 </template>
 
@@ -9,5 +12,10 @@ import Saldo from "../components/Saldo.vue";
 export default {
   components: { Saldo },
   name: "Home",
+  computed: {
+    usuarioEstaLogado() {
+      return Boolean(localStorage.getItem("token"));
+    },
+  },
 };
 </script>

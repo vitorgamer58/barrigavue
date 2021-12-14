@@ -35,9 +35,15 @@ const routes = [
   },
   {
     path: '/transacao',
-    name: 'transação',
+    name: 'transacao',
     titulo: 'Transação',
     logado: true,
+    component: () => import('../views/Transaction.vue')
+  },
+  {
+    path: '/transacao/:id',
+    name: 'editar-transacao',
+    titulo: 'Editar transação',
     component: () => import('../views/Transaction.vue')
   },
   {
