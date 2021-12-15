@@ -25,29 +25,26 @@
 </template>
 
 <script>
-import http from "../http";
 export default {
   data() {
     return {
       usuario: {
-        email: '',
-        passwd: ''
+        email: "",
+        passwd: "",
       },
     };
   },
   methods: {
     efetuarLogin() {
-      http
-        .login(this.usuario)
-        .then((res) => {
-          console.log(res);
-          localStorage.setItem("token", res.data.token);
-          this.$router.push({ name: "Home" });
-        })
+      this.$store
+        .dispatch("efetuarLogin", this.usuario)
+        .then(() => this.$router.push({ name: "Home" }))
         .catch((err) => alert(err.response.data.error));
     },
     isDisabled() {
-      return Boolean(this.usuario.email.length > 2 && this.usuario.passwd.length > 1);
+      return Boolean(
+        this.usuario.email.length > 2 && this.usuario.passwd.length > 1
+      );
     },
   },
 };

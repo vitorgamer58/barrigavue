@@ -9,13 +9,12 @@
 
 <script>
 import Saldo from "../components/Saldo.vue";
+import { mapGetters } from "vuex";
 export default {
   components: { Saldo },
   name: "Home",
   computed: {
-    usuarioEstaLogado() {
-      return Boolean(localStorage.getItem("token"));
-    },
+    ...mapGetters(['usuarioEstaLogado'])
   },
 };
 </script>

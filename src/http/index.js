@@ -1,9 +1,10 @@
 import axios from "axios";
+import provedor from "../provedor";
 
 const BASE_URL = 'http://barrigarest.notasdovitor.top:3001'
 
 axios.interceptors.request.use(function (config) {
-    const token = localStorage.getItem('token')
+    const token = provedor.state.token
     if (token) {
         config.headers.Authorization = `Bearer ${token}`
     }
