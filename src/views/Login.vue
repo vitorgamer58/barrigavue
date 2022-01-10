@@ -10,15 +10,11 @@
         <label for="password">{{ $t("senha") }}</label>
         <input type="password" class="form-control" v-model="usuario.passwd" />
       </div>
-      <button
-        type="submit"
-        class="btn btn-primary btn-block"
-        :disabled="!isDisabled()"
-      >
-        {{ $t('logar') }}
+      <button type="submit" class="btn btn-primary btn-block" :disabled="!isDisabled()">
+        {{ $t("logar") }}
       </button>
       <router-link :to="{ name: 'novo.usuario' }">
-        {{ $t('cadastro') }}
+        {{ $t("cadastro") }}
       </router-link>
     </form>
   </div>
@@ -30,8 +26,8 @@ export default {
     return {
       usuario: {
         email: "",
-        passwd: "",
-      },
+        passwd: ""
+      }
     };
   },
   methods: {
@@ -42,11 +38,9 @@ export default {
         .catch((err) => alert(err.response.data.error));
     },
     isDisabled() {
-      return Boolean(
-        this.usuario.email.length > 2 && this.usuario.passwd.length > 1
-      );
-    },
-  },
+      return Boolean(this.usuario.email.length > 2 && this.usuario.passwd.length > 1);
+    }
+  }
 };
 </script>
 

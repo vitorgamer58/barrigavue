@@ -3,23 +3,22 @@
     <li
       v-for="transacao in transacoes"
       v-bind:key="transacao.id"
-      class="
-        list-group-item list-group-item-action
-        flex-column
-        align-items-start
-      "
+      class="list-group-item list-group-item-action flex-column align-items-start"
     >
       <div class="row">
         {{ transacao.description }}, R$ {{ transacao.ammount }}
         <div class="col col-md-1">
           <button v-on:click.prevent="deletarTransacao(transacao)">
-            {{ $t('apagar') }}
+            {{ $t("apagar") }}
           </button>
         </div>
         <div class="col col-md-1">
           <router-link
-            :to="{ name: 'editar-transacao', params: { id: transacao.id } }"
-            ><button>{{ $t('transacao.editar') }}</button></router-link
+            :to="{
+              name: 'editar-transacao',
+              params: { id: transacao.id }
+            }"
+            ><button>{{ $t("transacao.editar") }}</button></router-link
           >
         </div>
       </div>
@@ -32,7 +31,7 @@ import http from "../http";
 export default {
   data() {
     return {
-      transacoes: [],
+      transacoes: []
     };
   },
   mounted() {
@@ -57,8 +56,8 @@ export default {
           alert("Deletado com sucesso");
         })
         .catch((err) => console.log(err));
-    },
-  },
+    }
+  }
 };
 </script>
 

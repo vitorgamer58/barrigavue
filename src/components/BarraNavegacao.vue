@@ -15,18 +15,18 @@ export default {
   components: {
     BarraNavegacaoDeslogado,
     BarraNavegacaoLogado,
-    LocaleChanger,
+    LocaleChanger
   },
   data() {
     return {
-      rotas: routes,
+      rotas: routes
     };
   },
   computed: {
     usuarioEstaLogado() {
       return this.$store.getters.usuarioEstaLogado;
-    },
-  },
+    }
+  }
 };
 </script>
 

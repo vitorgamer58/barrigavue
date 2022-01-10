@@ -2,8 +2,8 @@
   <div>
     <table>
       <tr>
-        <th>{{ $t('saldo.conta') }}</th>
-        <th>{{ $t('saldo.saldo') }}</th>
+        <th>{{ $t("saldo.conta") }}</th>
+        <th>{{ $t("saldo.saldo") }}</th>
       </tr>
       <tr v-for="conta in contas" v-bind:key="conta.id">
         <th>{{ conta.name }}</th>
@@ -20,7 +20,7 @@ export default {
   name: "Saldo",
   data() {
     return {
-      contas: [],
+      contas: []
     };
   },
   mounted() {
@@ -40,7 +40,7 @@ export default {
       .catch((err) => {
         alert(err.response.data.error);
       });
-  },
+  }
 };
 </script>
 

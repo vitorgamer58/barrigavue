@@ -13,6 +13,6 @@ export default {
   name: "locale-changer",
   data() {
     return { langs: ["pt-BR", "en"] };
-  },
+  }
 };
 </script>

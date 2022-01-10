@@ -15,15 +15,15 @@
 export default {
   props: {
     rotas: {
-      type: Array,
-    },
+      type: Array
+    }
   },
   methods: {
     efetuarLogout() {
-      this.$store.commit('DESLOGAR_USUARIO')
+      this.$store.commit("DESLOGAR_USUARIO");
       this.$router.push({ name: "home" });
-    },
-  },
+    }
+  }
 };
 </script>
 

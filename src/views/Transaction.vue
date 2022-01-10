@@ -1,44 +1,40 @@
 <template>
   <div>
-    <h3 v-if="!this.id">{{ $t('transacao.titulo') }}</h3>
-    <h3 v-else>{{ $t('transacao.editar') }}</h3>
+    <h3 v-if="!this.id">{{ $t("transacao.titulo") }}</h3>
+    <h3 v-else>{{ $t("transacao.editar") }}</h3>
     <form @submit.prevent="tratarTransacao">
       <div>
-        <label for="description">{{ $t('transacao.descricao') }}:</label>
+        <label for="description">{{ $t("transacao.descricao") }}:</label>
         <input type="description" v-model="transacao.description" />
       </div>
       <div>
-        {{ $t('transacao.tipo') }}:
-        <label for="i">{{ $t('transacao.entrada') }}</label>
+        {{ $t("transacao.tipo") }}:
+        <label for="i">{{ $t("transacao.entrada") }}</label>
         <input type="radio" id="i" value="I" v-model="transacao.type" />
-        <label for="o">{{ $t('transacao.saida') }}</label>
+        <label for="o">{{ $t("transacao.saida") }}</label>
         <input type="radio" id="o" value="O" v-model="transacao.type" />
       </div>
       <div>
-        {{ $t('transacao.conta') }}:
+        {{ $t("transacao.conta") }}:
         <select v-model="transacao.acc_id">
-          <option
-            v-for="conta in contas"
-            v-bind:key="conta.id"
-            :value="conta.id"
-          >
+          <option v-for="conta in contas" v-bind:key="conta.id" :value="conta.id">
             {{ conta.name }}
           </option>
         </select>
       </div>
       <div>
-        <label for="value">{{ $t('transacao.valor') }}:</label>
+        <label for="value">{{ $t("transacao.valor") }}:</label>
         <input type="value" v-model="transacao.ammount" />
       </div>
       <div>
-        {{ $t('transacao.status') }}:
+        {{ $t("transacao.status") }}:
         <select v-model="transacao.status">
-          <option :value="true">{{ $t('transacao.pago') }}</option>
-          <option :value="false">{{ $t('transacao.apagar') }}</option>
+          <option :value="true">{{ $t("transacao.pago") }}</option>
+          <option :value="false">{{ $t("transacao.apagar") }}</option>
         </select>
       </div>
-      <button type="submit" v-if="!this.id">{{ $t('transacao.criar') }}</button>
-      <button type="submit" v-else>{{ $t('transacao.editar') }}</button>
+      <button type="submit" v-if="!this.id">{{ $t("transacao.criar") }}</button>
+      <button type="submit" v-else>{{ $t("transacao.editar") }}</button>
     </form>
   </div>
 </template>
@@ -55,10 +51,10 @@ export default {
         ammount: "",
         type: "I",
         acc_id: "",
-        status: true,
+        status: true
       },
       contas: [],
-      id: this.$route.params.id,
+      id: this.$route.params.id
     };
   },
   created() {
@@ -101,8 +97,8 @@ export default {
           this.$router.push({ name: "extrato" });
         })
         .catch((err) => alert(err.response.data.error));
-    },
-  },
+    }
+  }
 };
 </script>
 

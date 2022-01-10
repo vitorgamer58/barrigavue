@@ -10,9 +10,9 @@
   </div>
 </template>
 <script>
-import BarraNavegacao from './components/BarraNavegacao.vue'
-import Rodape from './components/Rodape.vue';
-import {routes} from './router/index';
+import BarraNavegacao from "./components/BarraNavegacao.vue";
+import Rodape from "./components/Rodape.vue";
+import { routes } from "./router/index";
 
 export default {
   components: {
@@ -22,9 +22,9 @@ export default {
   data() {
     return {
       routes: routes
-    }
+    };
   }
-}
+};
 </script>
 <style>
 #app {
@@ -33,10 +33,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  /* padding: 30px; */
 }
 
 #nav a {
