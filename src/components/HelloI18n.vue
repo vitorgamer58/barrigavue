@@ -1,10 +1,13 @@
 <template>
-  <p>{{ $t('hello') }}</p>
+  <p>{{ $t('message') }}</p>
 </template>
 
 <script>
 export default {
-  name: 'HelloI18n'
+  name: 'HelloI18n',
+  mounted() {
+    console.log(this.$i18n.locale)
+  }
 }
 </script>
 

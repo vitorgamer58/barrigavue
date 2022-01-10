@@ -1,3 +1,25 @@
 {
-  "message": "hello i18n !!"
+  "login": "Por favor, faça login",
+  "logar": "Logar",
+  "cadastro": "Não possui cadastro? Cadastre-se aqui!",
+  "cadastro.titulo": "Novo usuário",
+  "nome": "Nome",
+  "senha": "Senha",
+  "botao.cadastrar": "Cadastre-se",
+  "contas": "Contas",
+  "apagar": "Deletar",
+  "contas.criar": "Criar nova conta",
+  "contas.botao": "Criar",
+  "transacao.titulo": "Nova transação",
+  "transacao.descricao": "Descrição",
+  "transacao.tipo": "Tipo",
+  "transacao.entrada": "Entrada",
+  "transacao.saida": "Saída",
+  "transacao.conta": "Conta",
+  "transacao.valor": "Valor",
+  "transacao.status": "Status",
+  "transacao.pago": "Pago",
+  "transacao.apagar": "A pagar",
+  "transacao.criar": "Criar",
+  "transacao.editar": "Modificar"
 }

@@ -1,20 +1,21 @@
 <template>
   <div>
-    <h3>Nova Transação</h3>
+    <h3 v-if="!this.id">{{ $t('transacao.titulo') }}</h3>
+    <h3 v-else>{{ $t('transacao.editar') }}</h3>
     <form @submit.prevent="tratarTransacao">
       <div>
-        <label for="description">Descrição:</label>
+        <label for="description">{{ $t('transacao.descricao') }}:</label>
         <input type="description" v-model="transacao.description" />
       </div>
       <div>
-        Tipo:
-        <label for="i">Entrada</label>
+        {{ $t('transacao.tipo') }}:
+        <label for="i">{{ $t('transacao.entrada') }}</label>
         <input type="radio" id="i" value="I" v-model="transacao.type" />
-        <label for="o">Saída</label>
+        <label for="o">{{ $t('transacao.saida') }}</label>
         <input type="radio" id="o" value="O" v-model="transacao.type" />
       </div>
       <div>
-        Conta:
+        {{ $t('transacao.conta') }}:
         <select v-model="transacao.acc_id">
           <option
             v-for="conta in contas"
@@ -26,18 +27,18 @@
         </select>
       </div>
       <div>
-        <label for="value">Valor:</label>
+        <label for="value">{{ $t('transacao.valor') }}:</label>
         <input type="value" v-model="transacao.ammount" />
       </div>
       <div>
-        Status:
+        {{ $t('transacao.status') }}:
         <select v-model="transacao.status">
-          <option :value="true">Pago</option>
-          <option :value="false">À pagar</option>
+          <option :value="true">{{ $t('transacao.pago') }}</option>
+          <option :value="false">{{ $t('transacao.apagar') }}</option>
         </select>
       </div>
-      <button type="submit" v-if="!this.id">Criar transacao</button>
-      <button type="submit" v-else>Modificar transacao</button>
+      <button type="submit" v-if="!this.id">{{ $t('transacao.criar') }}</button>
+      <button type="submit" v-else>{{ $t('transacao.editar') }}</button>
     </form>
   </div>
 </template>

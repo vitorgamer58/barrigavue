@@ -13,13 +13,13 @@
         {{ transacao.description }}, R$ {{ transacao.ammount }}
         <div class="col col-md-1">
           <button v-on:click.prevent="deletarTransacao(transacao)">
-            Apagar
+            {{ $t('apagar') }}
           </button>
         </div>
         <div class="col col-md-1">
           <router-link
             :to="{ name: 'editar-transacao', params: { id: transacao.id } }"
-            ><button>Modificar</button></router-link
+            ><button>{{ $t('transacao.editar') }}</button></router-link
           >
         </div>
       </div>

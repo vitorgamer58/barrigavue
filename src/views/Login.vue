@@ -7,7 +7,7 @@
         <input type="email" class="form-control" v-model="usuario.email" />
       </div>
       <div class="form-group">
-        <label for="password">Senha</label>
+        <label for="password">{{ $t("senha") }}</label>
         <input type="password" class="form-control" v-model="usuario.passwd" />
       </div>
       <button
@@ -15,10 +15,10 @@
         class="btn btn-primary btn-block"
         :disabled="!isDisabled()"
       >
-        Logar
+        {{ $t('logar') }}
       </button>
       <router-link :to="{ name: 'novo.usuario' }">
-        Não possui cadastro? Cadastre-se aqui!
+        {{ $t('cadastro') }}
       </router-link>
     </form>
   </div>

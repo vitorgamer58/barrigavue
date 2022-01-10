@@ -2,24 +2,24 @@
   <div>
     <table>
       <tr>
-        <th>Contas</th>
+        <th>{{ $t('contas') }}</th>
       </tr>
       <tr v-for="conta in contas" v-bind:key="conta.id">
         {{
           conta.name
         }}
-        <button v-on:click.prevent="deletarConta(conta)">Apagar</button>
+        <button v-on:click.prevent="deletarConta(conta)">{{ $t('apagar') }}</button>
       </tr>
     </table>
     <br />
     <div>
       <form @submit.prevent="criarConta">
-        <h3>Criar nova conta</h3>
+        <h3>{{ $t('contas.criar') }}</h3>
         <div>
           <label for="Nome"></label>
           <input type="Nome" v-model="conta.name" />
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Criar</button>
+        <button type="submit" class="btn btn-primary btn-block">{{ $t('contas.botao') }}</button>
       </form>
     </div>
   </div>
@@ -70,4 +70,7 @@ export default {
 </script>
 
 <style>
+.btn {
+  margin: 5px;
+}
 </style>

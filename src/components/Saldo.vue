@@ -2,8 +2,8 @@
   <div>
     <table>
       <tr>
-        <th>Conta</th>
-        <th>Saldo</th>
+        <th>{{ $t('saldo.conta') }}</th>
+        <th>{{ $t('saldo.saldo') }}</th>
       </tr>
       <tr v-for="conta in contas" v-bind:key="conta.id">
         <th>{{ conta.name }}</th>
