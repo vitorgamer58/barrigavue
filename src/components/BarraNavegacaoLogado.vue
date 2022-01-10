@@ -21,7 +21,7 @@ export default {
   methods: {
     efetuarLogout() {
       this.$store.commit("DESLOGAR_USUARIO");
-      this.$router.push({ name: "home" });
+      this.$router.push({ name: "Home" });
     }
   }
 };

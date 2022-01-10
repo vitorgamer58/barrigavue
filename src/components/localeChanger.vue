@@ -12,7 +12,7 @@
 export default {
   name: "locale-changer",
   data() {
-    return { langs: ["pt-BR", "en"] };
+    return { langs: ["pt-BR", "en", "ru"] };
   }
 };
 </script>
