@@ -6,6 +6,8 @@
   "nome": "Nome",
   "senha": "Senha",
   "botao.cadastrar": "Cadastre-se",
+  "saldo.conta": "Conta",
+  "saldo.saldo": "Saldo",
   "contas": "Contas",
   "apagar": "Deletar",
   "contas.criar": "Criar nova conta",
