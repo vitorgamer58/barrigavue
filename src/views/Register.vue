@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <h1>Novo usuário</h1>
+    <h1>{{ $t("cadastro.titulo") }}</h1>
     <form @submit.prevent="cadastrarUsuario">
       <div class="form-group">
-        <label for="nome">Nome</label>
+        <label for="nome">{{ $t("nome") }}</label>
         <input type="text" class="form-control" v-model="usuario.name" />
       </div>
       <div class="form-group">
@@ -11,10 +11,10 @@
         <input type="text" class="form-control" v-model="usuario.email" />
       </div>
       <div class="form-group">
-        <label for="password">Senha</label>
+        <label for="password">{{ $t("senha") }}</label>
         <input type="password" class="form-control" v-model="usuario.passwd" />
       </div>
-      <button class="btn btn-primary" type="submit">Cadastrar</button>
+      <button class="btn btn-primary" type="submit">{{ $t("botao.cadastrar") }}</button>
     </form>
   </div>
 </template>
@@ -27,8 +27,8 @@ export default {
       usuario: {
         name: "",
         passwd: "",
-        email: "",
-      },
+        email: ""
+      }
     };
   },
   methods: {
@@ -40,8 +40,8 @@ export default {
           this.$router.push({ name: "login" });
         })
         .catch((err) => alert(err.response.data.error));
-    },
-  },
+    }
+  }
 };
 </script>
 

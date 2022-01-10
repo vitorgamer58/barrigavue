@@ -2,6 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-barriga">
     <barra-navegacao-logado :rotas="rotas" v-if="usuarioEstaLogado" />
     <barra-navegacao-deslogado :rotas="rotas" v-else />
+    <div class="locale"><LocaleChanger /></div>
   </nav>
 </template>
 
@@ -9,19 +10,21 @@
 import BarraNavegacaoDeslogado from "./BarraNavegacaoDeslogado.vue";
 import { routes } from "@/router";
 import BarraNavegacaoLogado from "./BarraNavegacaoLogado.vue";
+import LocaleChanger from "./localeChanger.vue";
 export default {
   components: {
     BarraNavegacaoDeslogado,
     BarraNavegacaoLogado,
+    LocaleChanger
   },
   data() {
     return {
-      rotas: routes,
+      rotas: routes
     };
   },
   computed: {
-    usuarioEstaLogado () {
-      return this.$store.getters.usuarioEstaLogado
+    usuarioEstaLogado() {
+      return this.$store.getters.usuarioEstaLogado;
     }
   }
 };
@@ -34,5 +37,10 @@ export default {
 
 .navbar-barriga a {
   margin-left: 15px;
+}
+
+.locale {
+  margin-right: 1rem;
+  margin-left: auto;
 }
 </style>

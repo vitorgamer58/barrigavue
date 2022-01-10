@@ -2,7 +2,7 @@
   <div class="home">
     <Saldo v-if="usuarioEstaLogado" />
     <div v-else>
-      <p>Faça Login</p>
+      <p>{{ $t("login") }}</p>
     </div>
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
   components: { Saldo },
   name: "Home",
   computed: {
-    ...mapGetters(['usuarioEstaLogado'])
-  },
+    ...mapGetters(["usuarioEstaLogado"])
+  }
 };
 </script>
