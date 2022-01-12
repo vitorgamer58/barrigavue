@@ -2,7 +2,7 @@
   <div class="home">
     <Saldo v-if="usuarioEstaLogado" />
     <div v-else>
-      <p>{{ $t("login") }}</p>
+      <p>{{ $t("home.login") }}</p>
     </div>
   </div>
 </template>
@@ -12,7 +12,7 @@ import Saldo from "../components/Saldo.vue";
 import { mapGetters } from "vuex";
 export default {
   components: { Saldo },
-  name: "Home",
+  name: "home",
   computed: {
     ...mapGetters(["usuarioEstaLogado"])
   }

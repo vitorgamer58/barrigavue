@@ -34,7 +34,7 @@ export default {
     efetuarLogin() {
       this.$store
         .dispatch("efetuarLogin", this.usuario)
-        .then(() => this.$router.push({ name: "Home" }))
+        .then(() => this.$router.push({ name: "home" }))
         .catch((err) => alert(err.response.data.error));
     },
     isDisabled() {

@@ -1,11 +1,11 @@
 <template>
   <div class="" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li v-for="route in rotas" v-bind:key="route.titulo">
-        <router-link :to="route.path" v-if="route.logado">{{ route.titulo }}</router-link>
+      <li v-for="route in rotas" v-bind:key="route.name">
+        <router-link :to="route.path" v-if="route.logado">{{ $t(route.name) }}</router-link>
       </li>
       <li>
-        <a href="#" @click.prevent="efetuarLogout">Sair</a>
+        <a href="#" @click.prevent="efetuarLogout">{{ $t('sair') }}</a>
       </li>
     </ul>
   </div>
@@ -21,7 +21,7 @@ export default {
   methods: {
     efetuarLogout() {
       this.$store.commit("DESLOGAR_USUARIO");
-      this.$router.push({ name: "Home" });
+      this.$router.push({ name: "home" });
     }
   }
 };

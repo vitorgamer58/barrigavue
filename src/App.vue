@@ -2,8 +2,6 @@
   <div id="app">
     <div id="nav">
       <barra-navegacao />
-      <!-- <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> -->
     </div>
     <router-view />
     <rodape />

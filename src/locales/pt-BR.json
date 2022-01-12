@@ -1,6 +1,12 @@
 {
-  "login": "Por favor, faça login",
+  "home": "BarrigaVue",
+  "login": "Login",
+  "novo.usuario": "Cadastre-se",
+  "home.login": "Por favor, faça login",
   "logar": "Logar",
+  "extrato": "Extrato",
+  "transacao": "Transação",
+  "sair": "Sair",
   "cadastro": "Não possui cadastro? Cadastre-se aqui!",
   "cadastro.titulo": "Novo usuário",
   "nome": "Nome",
