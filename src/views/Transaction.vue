@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="transacao">
     <h3 v-if="!this.id">{{ $t("transacao.titulo") }}</h3>
     <h3 v-else>{{ $t("transacao.editar") }}</h3>
     <form @submit.prevent="tratarTransacao">
@@ -7,12 +7,12 @@
         <label for="description">{{ $t("transacao.descricao") }}:</label>
         <input type="description" v-model="transacao.description" />
       </div>
-      <div>
+      <div class="transacao_tipo">
         {{ $t("transacao.tipo") }}:
-        <label for="i">{{ $t("transacao.entrada") }}</label>
         <input type="radio" id="i" value="I" v-model="transacao.type" />
-        <label for="o">{{ $t("transacao.saida") }}</label>
+        <label for="i">{{ $t("transacao.entrada") }}</label>
         <input type="radio" id="o" value="O" v-model="transacao.type" />
+        <label for="o">{{ $t("transacao.saida") }}</label>
       </div>
       <div>
         {{ $t("transacao.conta") }}:
@@ -103,7 +103,15 @@ export default {
 </script>
 
 <style>
+.transacao * {
+  margin: 0.2rem;
+}
+
 label {
   margin-right: 5px;
+}
+
+.transacao_tipo label {
+  margin: auto 0.5rem;
 }
 </style>
