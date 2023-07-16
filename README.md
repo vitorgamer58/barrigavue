@@ -1,8 +1,11 @@
 # barrigavue
 
+This project run on node 14.x
+
 ## Project setup
 ```
 npm install
+npm install -G @vue/vue-cli-service
 ```
 
 ### Compiles and hot-reloads for development

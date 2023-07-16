@@ -1,7 +1,7 @@
 import axios from "axios";
 import provedor from "../provedor";
 
-const BASE_URL = 'https://barrigarest.notasdovitor.top'
+const BASE_URL = process.env.BASE_URL
 
 axios.interceptors.request.use(function (config) {
     const token = provedor.state.token
